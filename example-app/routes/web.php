@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 Route::group(['prefix' =>  'tweet', 'as' => 'tweet.'], function() {
     Route::get('/', Tweet\IndexController::class)->name('index');
     Route::post('/create', Tweet\CreateController::class)->name('create');
@@ -32,3 +36,4 @@ Route::group(['prefix' =>  'tweet', 'as' => 'tweet.'], function() {
     Route::delete('/delete/{tweetId}', DeleteController::class)->name('delete');
 });
 
+require __DIR__.'/auth.php';
