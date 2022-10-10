@@ -4,9 +4,9 @@ on:
   push:
   pull_request:
 
-defaults:
-  run:
-    working-directory: example-app
+# defaults:
+#   run:
+#     working-directory: example-app
 
 env:
   DB_USERNAME: sail
