@@ -10,14 +10,11 @@ use Mockery;
 class TweetServiceTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @runInSeparateProcess
      * @return void
      */
-    public function test_example()
+    public function test_check_own_tweet()
     {
-        $tweetService = new TweetService();
 
         $mock = Mockery::mock('alias:App\Models\Tweet');
         $mock->shouldReceive('where->first')->andReturn((object)[
